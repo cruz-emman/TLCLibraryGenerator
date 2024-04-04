@@ -27,6 +27,7 @@ const TableData = ({ totalUsers, loading }) => {
     return matchingMonth ? matchingMonth.result : 0;
   };
 
+
   return (
     <Table>
       <TableHeader>

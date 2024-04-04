@@ -16,7 +16,7 @@ router.post("/", upload.single("excel"), async (req, res) => {
 
     const workbook = XLSX.read(req.file.buffer, { type: "buffer" });
     //0-9
-    const sheetName = workbook.SheetNames[9];
+    const sheetName = workbook.SheetNames[0];
     const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
     const columnsArray = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
       header: 1,
@@ -32,7 +32,7 @@ router.post("/", upload.single("excel"), async (req, res) => {
 
       for (let i = 0; i < data.length; i++) {
         const { firstname, lastname, department, type } = data[i];
-        let fullname = `${firstname} ${lastname}`
+        let fullname = `${firstname} ${lastname}`;
 
         const sql =
           "INSERT INTO users (firstname,lastname,department,type, fullname ) VALUES(?, ?, ?, ?, ?)";
@@ -43,7 +43,7 @@ router.post("/", upload.single("excel"), async (req, res) => {
             lastname || null,
             department || null,
             type || null,
-            fullname || null
+            fullname || null,
           ]);
 
           if (rows.affectedRows) {
@@ -54,17 +54,18 @@ router.post("/", upload.single("excel"), async (req, res) => {
         } catch (error) {
           console.error("Error executing SQL query:", error);
           failedData.push(data[i]);
-          return res.status(400).json(error)
-
+          return res.status(400).json(error);
         }
       }
       return res.json({ msg: "Ok", data: { successData, failedData } });
     } else {
-        return res.status(400).json('Excel header is not the same!')
+      return res.status(400).json("Excel header is not the same!");
     }
   } catch (error) {
     console.error("Error processing file:", error);
-    return res.status(500).json({ error: "Error reading/uploading file. Please try again." });
+    return res
+      .status(500)
+      .json({ error: "Error reading/uploading file. Please try again." });
   }
 });
 

@@ -47,7 +47,7 @@ const Botside = () => {
       const resultCHTM = exportData("COLLEGE OF HOSPITALITY AND TOURISM MANAGEMENT");
       const resultCMT = exportData("COLLEGE OF MEDICAL TECHNOLOGY");
       const resultSLCN = exportData("ST. LUKE’S COLLEGE OF NURSING");
-      const resultTHS = exportData("HIGHSCHOOL");
+      const resultTHS = exportData("TRINTY HIGH SCHOOL");
       const resultGS = exportData("GRADUATE SCHOOL");
       const resultNoCollege = exportData(null);
   
@@ -70,7 +70,7 @@ const Botside = () => {
         XLSX.utils.book_append_sheet(workbook, sheetCHTM, "CHTM");
         XLSX.utils.book_append_sheet(workbook, sheetCMT, "CMT");
         XLSX.utils.book_append_sheet(workbook, sheetSLCN, "SLCN");
-        XLSX.utils.book_append_sheet(workbook, sheetTHS, "THS");
+        XLSX.utils.book_append_sheet(workbook, sheetTHS, "TRINTY HIGH SCHOOL");
         XLSX.utils.book_append_sheet(workbook, sheetGS, "GS");
         XLSX.utils.book_append_sheet(workbook, sheetNoCollege, "No College");
   

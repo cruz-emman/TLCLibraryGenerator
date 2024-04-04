@@ -7,7 +7,7 @@ export const Colleges = [
     { label: "CHTM", value: "COLLEGE OF HOSPITALITY AND TOURISM MANAGEMENT" },
     { label: "CMT", value: "COLLEGE OF MEDICAL TECHNOLOGY" },
     { label: "SLCN", value: "ST. LUKE’S COLLEGE OF NURSING" },
-    { label: "THS", value: "HIGH SCHOOL" },
+    { label: "THS", value: "TRINTY HIGH SCHOOL" },
     { label: "GS", value: "GRADUATE SCHOOL" },
   ];
 
@@ -123,7 +123,7 @@ export const TableDataSample = [
             "Mar": 91,
             "May": 32
         },
-        "HIGHSCHOOL": {
+        "TRINTY HIGH SCHOOL": {
             "Nov": 10,
             "Oct": 32,
             "Sep": 1
@@ -239,7 +239,6 @@ export const sampleResult = [
 ]
 
 
-// const resultArray = Object.keys(organizedData).map((college, idx) => ({
 //     id: idx + 1,
 //     colleges: college,
 //     data: orderedMonths.reduce((acc, month) => {

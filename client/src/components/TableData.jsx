@@ -12,7 +12,7 @@ import XLSX from "xlsx";
 
 const TableData = ({ totalUsers, loading }) => {
   const column = totalUsers.column;
-
+  console.log(totalUsers)
   if (loading) {
     return <div>Data is loading...</div>;
   }
@@ -39,8 +39,10 @@ const TableData = ({ totalUsers, loading }) => {
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
   
     /* Export the workbook */
-    XLSX.writeFile(workbook, "example.xlsx");
+    XLSX.writeFile(workbook, "table_result.xlsx");
   }
+
+
 
   return (
     <>

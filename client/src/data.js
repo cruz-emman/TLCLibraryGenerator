@@ -192,7 +192,7 @@ export const TableDataSample = [
           "Mar": 91,
           "May": 32
       },
-      "HIGHSCHOOL": {
+      "TRINTY HIGH SCHOOL": {
           "Nov": 10,
           "Oct": 32,
           "Sep": 1

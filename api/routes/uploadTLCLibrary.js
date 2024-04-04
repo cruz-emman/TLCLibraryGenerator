@@ -15,7 +15,7 @@ router.post("/", upload.single("excel"), async (req, res) => {
     }
 
     const workbook = XLSX.read(req.file.buffer, { type: "buffer" });
-    const sheetName = workbook.SheetNames[15];
+    const sheetName = workbook.SheetNames[0];
     const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
     const columnsArray = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
       header: 1,
